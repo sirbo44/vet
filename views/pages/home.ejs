@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+    <style>
+        #title{
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        #subtitle{
+            margin-left: 17%;
+            margin-right: 17%;
+        }
+        .button{
+            margin-top: 5%;
+            margin-left: 38.5%;
+            width: 20%;
+            background-color: #9AD0C2;
+            border-radius: 20px;
+        }
+        #button{
+            text-decoration: none;
+            color: aliceblue;
+            margin-left: 30%;
+        }
+        #image{
+            margin-top: 5%;
+            width: 90%;
+            margin-left: 5%;
+        }
+        .text{
+            margin-top:2rem;
+            margin-left:38%;
+            color:#265073;
+            margin-bottom: 2rem;
+        }
+        .color1, .color2, .color3{
+            width: 18.5rem;
+            height: 0.4rem;
+            margin-bottom:-1rem;
+            margin-left:-1rem;
+            border-radius: 0 0 10rem 10rem;
+        }
+        .color1{
+            background-color:#ECF4D6 ;
+        }
+        .color2{
+            background-color:#9AD0C2 ;
+        }
+        .color3{
+            background-color:#2D9596 ;
+            margin-top:2.6rem;
+        }
+        .color1, .color2, .color3{
+            width:120%;
+        }
+        .content{
+            margin-bottom: 2rem;
+        }
+        .addpet, .messages{
+            display: inline-block;
+            text-decoration: none;
+            color:aliceblue;
+        }
+        .messages{
+            background-color: #2D9596;
+            margin-top: 5%;
+            width: 30%;
+            height:20%;
+        }
+        .addpet{
+            background-color:#265073;
+            width: 30%;
+            height:20%;
+        }
+        .messages:hover, .addpet:hover{
+            color:#9AD0C2;
+        }
+        #button-text{
+            margin-left: 38%;
+        }
+        .first-item{
+            margin-left: 18%;
+        }
+    </style>
+    <body>
+        <%- include('../partials/navbar');%>
+        <%if (role == "doctor") {%>
+            <a href="messages">
+                <div class="messages first-item">
+                    <p id="button-text">Messages</p>
+                </div>
+            </a>
+            <a href="addpet">
+                <div class="addpet">
+                    <p id="button-text">Add exam</p>
+                </div>
+            </a>
+        <% } else {%>
+            <h1 id="title">Welcome to PetPulse Care, where every wag, purr, and flutter finds care at your fingertips!</h1>
+            <p id="subtitle">Lorem consequat cillum consectetur officia occaecat tempor reprehenderit. Dolor fugiat pariatur velit quis ullamco quis. Consectetur est magna reprehenderit voluptate irure dolore quis. </p>
+            <%if (email == '') {%>
+                <div class="button">
+                    <a href="login" id="button">Create an account</a>
+                </div>
+            <% } %>
+            <img id="image" src="../images/home image.jpeg">
+            <h2 class="text">What make up different</h2>
+            <div class="row content">
+                <div class="col-sm-2 mb-3 mb-sm-0 offset-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fa-regular fa-clock icon"></i>
+                            <h5 class="card-title"><%= data[0]['title']%></h5>
+                            <p class="card-text"><%= data[0]['content']%></p>
+                            <div class="color1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fa-solid fa-video icon"></i>
+                            <h5 class="card-title"><%= data[1]['title']%></h5>
+                            <p class="card-text"><%= data[1]['content']%></p>
+                            <div class="color2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fa-solid fa-headset icon"></i>
+                            <h5 class="card-title"><%= data[2]['title']%></h5>
+                            <p class="card-text"><%= data[2]['content']%></p>
+                            <div class="color3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('../partials/footer'); %>
+        <% } %>
+        <%- include('../partials/bottom'); %>
+    </body>
+</html>

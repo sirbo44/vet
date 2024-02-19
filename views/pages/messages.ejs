@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+    <style>
+        #title{
+            margin-left: 43%;
+        }
+    </style>
+    <body>
+        <%- include('../partials/navbar'); %>
+        <h1 id="title">Messages</h1>
+        <%if (messages.length) {%>
+            <%for (let i=0;i<messages.length;i++) {%>
+                <div class="card text-center">
+                    <div class="card-header">
+                        Name: <%= messages[i].name %> email: <%= messages[i].email %>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= messages[i].exams %></h5>
+                        <h6>Phone: <%= messages[i].phone %></h6>
+                        <p class="card-text"><%= messages[i].message %></p>
+                    </div>
+                </div>
+            <%}%>
+        <%} else {%>
+            <p>No messages found</p>
+        <% } %>
+        
+    <%- include('../partials/footer'); %>
+    <%- include('../partials/bottom'); %>
+    </body>
+</html>

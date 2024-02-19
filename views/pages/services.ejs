@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+    <style>
+        .card{
+            border: none;
+            margin-left: 10rem;
+            margin-right: 20rem;
+        }
+        #button{
+            width: 12rem;
+            height: 2rem;
+            background-color: aquamarine;
+            
+            border-radius: 25rem;
+        }
+        #text{
+            margin-left: 1rem;
+            text-decoration: none;
+            vertical-align: baseline;
+            color:red;
+        }
+        
+    </style>
+<body>
+    <%- include('../partials/navbar'); %>
+        <div class="card mb-4">
+            <div class="row g-0">
+                <% for(var i=0; i<data.length; i++) { %>
+                    <div class="card mb-3">
+                      <div class="row g-0">
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"><%= data[i]['title'] %></h5>
+                            <p class="card-text"><%= data[i]['content'] %></p>
+                            <div id="button">
+                              <a href="appointment" id="text">  Make an appointment</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4" id="photo">
+                          <img src="<%= data[i]['image'] %>" class="img-fluid" alt="...">
+                        </div>
+                      </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    <%- include('../partials/footer'); %>
+    <%- include('../partials/bottom'); %>
+</body>
+</html>

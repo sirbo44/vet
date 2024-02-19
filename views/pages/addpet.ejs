@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+    <style>
+        form{
+            margin-left: 28%;
+        }
+        #name, #owner, #exams{
+            margin-top: 1rem;
+            border: none;
+            color:#c4c6ce;
+            background-color: #f3f5f7;
+            border-radius: 1rem;
+            height:3rem;
+        }
+        button{
+            background-color: #9AD0C2;
+            color:rgb(0, 0, 0);
+            width:15rem;
+            height:3rem;
+            font-size: 1.2rem;
+            border-radius: 2rem;
+            border: none;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .title{
+            font-size: 2rem;
+        }
+    </style>
+    <body>
+        <%- include('../partials/navbar'); %>
+        <form method="post" action="addpet">
+            <label class="title"><b>Add a new pet</b></label></br>
+            <input type="text" placeholder="  Name" name='id' id="name" required>
+            <input type="text" placeholder="  Owner" name='owner' id="owner" require>
+            <input type="text" placeholder="  Exams" name='exams' id='exams' required></br>
+            <button type="submit">Submit</button>   
+        </form>
+        <%- include('../partials/footer'); %>
+        <%- include('../partials/bottom'); %>
+    </body>
+</html>
